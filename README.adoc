@@ -30,11 +30,19 @@ en précisant les paramètres entrants et sortant, le contexte d'utilisation...
 |===
 |URI |Méthode |Description 
 
-|/hello/{name}|GET
-|Renvoie le message "Hello {name} !" avec {name} passé en URI, en text/plain, code 200 OK
+|/register|POST
+|Permet de se créer un compte.
+Input: User avec username, password, date et place
+Output: Returne l'utilisateur nouvellement créé
 
-|/hello|POST
-|Input: JSON avec attribut name, Output: chaine "Hello {name} !", code 200 OK
+|/user/{name}/certificate/new|POST
+|Input: Une attestation avec la date, l'heure et le motif du déplacement
+Output: Un UUID s'il elle est valide
+
+|/certificate/{id}|GET
+|Input: Le UUID de l'attestation
+Output: L'attestation et l'identité de la personne
+
 |===
 
 
